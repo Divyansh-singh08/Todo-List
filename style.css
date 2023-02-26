@@ -1,0 +1,387 @@
+@import url('https://fonts.googleapis.com/css2?family=Baloo+Bhaina+2:wght@400;700&family=Baloo+Paaji+2&family=Forum&family=Lato&family=Poppins:ital,wght@1,200&family=Roboto+Mono:wght@400;600&family=Roboto:wght@300&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    background-color: hsl(235, 24%, 19%);
+    display: flex;
+    justify-content: center;
+  }
+  
+  .background-image {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 350px;
+    z-index: -1;
+    /* width:300px; */
+  }
+  .background-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: right;
+    filter: blur(5px);
+    -webkit-filter: blur(5px);
+  }
+  
+  .container {
+    /* border:2px solid pink; */
+    width: 150%;
+    max-width: 700px;
+    margin: 0 30px;
+    margin-top: 100px;
+    /* overflow: hidden; */
+  }
+  
+  .header {
+    /* border:2px solid rgb(20, 16, 219); */
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  
+  .title {
+    /* border:2px solid rgb(46, 219, 16); */
+    color: rgb(253, 199, 3);
+    font-size: 50px;
+    font-weight: bold;
+    letter-spacing: 10px;
+  }
+  
+  .new-todo {
+    /* border:2px solid rgb(219, 16, 16); */
+    /* hsl(235, 24%, 19%); */
+    background-color: hsl(198, 22%, 45%);
+    height: 70px;
+    margin-top: 50px;
+    border-radius: 6px 0px 0px 6px;
+    display: flex;
+    width: 90%;
+  }
+  
+  .check {
+    /* border:2px solid rgb(234, 255, 0); */
+    width: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-decoration:line-through; */
+  }
+  .check-mark {
+    /* border:4px solid rgb(130, 29, 29); */
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    border: 2px solid hsl(237, 14%, 26%);
+    cursor: pointer;
+    transition: all 0.25s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* text-decoration:line-through; */
+  }
+  .check-mark:hover {
+    /* border:2px solid rgb(23, 219, 16); */
+    background: linear-gradient(135deg, #55ddff 100%);
+  }
+  
+  .check-mark .fa-check {
+    /* border:2px solid rgb(20, 16, 219); */
+    opacity: 0;
+    /* text-decoration:line-through; */
+  }
+  .checked .fa-check {
+    /* border:2px solid rgb(16, 219, 219); */
+    font-weight: bold;
+    opacity: 1;
+    color: rgb(1, 252, 118);
+    /* text-decoration:line-through; */
+  }
+  
+  
+  .check-mark:hover img{
+    opacity: 1;
+    transition: ease-in-out .25s;
+  }
+  
+  .new-todo-input {
+    /* border:3px solid rgb(20, 16, 219); */
+    flex-grow: 1;
+    width: 92%;
+    display: flex;
+    align-items: center;
+  }
+  .new-todo-input form {
+    /* border:2px solid rgb(20, 16, 219); */
+    flex-grow: 1;
+  }
+  .new-todo-input input {
+    /* border:2px solid rgb(237, 234, 234); */
+    width: 92%;
+    padding: 10px 0px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    /* hsl(234, 39%, 85%); */
+    color: hsl(50, 73%, 54%);
+    font-size: 18px;
+  }
+  
+  .new-todo-input input::placeholder {
+    /* margin-bottom:80px; */
+    color: hsl(233, 14%, 35%);
+  }
+  .new-todo-input button {
+    /* border:2px solid green; */
+    background-color: coral;
+    display: flex;
+    flex: nowrap;
+    flex-direction: row-reverse;
+    justify-content: center;
+    align-items:center;
+    
+  }
+
+  .new-todo-input form .btn {
+    width: 62px;
+    height: 70px;
+    border-radius: 0px 6px 6px 0px;
+    border:none;
+    background-color:hsl(198, 22%, 45%);
+    background-size: cover;
+    position:absolute;
+    right: 26.5rem; 
+    /* right: 27.6%; */
+    /* top: 28.8%; */
+    top:13.2rem;
+    /* right: -35.5rem; */
+    /* top: -1.3rem; */
+    cursor: pointer;
+    box-shadow:0 8px 35px 0 rgba(77, 170, 119, 0.388); ;
+    /* border:2px solid green; */
+    
+  }
+  .new-todo-input form .btn:hover {
+    background-color: hsl(235, 24%, 19%);
+    
+  }
+
+  form .btn span{
+    font-weight: bold;
+    font-size:40px;
+  }
+
+
+  #delete-all{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 8%;
+    
+    /* height: 100%; */
+    /* margin-bottom: 10px; */
+  }
+  .todos-filter{
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: start;
+    /* border:2px solid green; */
+    width:130px;
+    height: 50px;
+    margin-top:10px;
+    /* background-color: #fff; */
+  }
+  .todos-filter button{
+    width:150px;
+    padding:16px 16px;
+    margin:0 8px;
+    color:rgb(7, 4, 4);
+    font-weight: bold;
+    font-size:15px;
+    text-align: center;
+    border-radius: 8px;
+    border:none;
+    cursor: pointer;
+  }
+
+  .todos-filter button:hover{
+    background-color:rgb(144, 2, 2);
+    box-shadow: 0 8px 35px 0 rgba(170, 86, 77, 0.3);
+    cursor: pointer;
+  }
+
+
+
+
+
+
+
+
+
+  
+  .todo-item {
+    /* border:2px solid rgb(13, 0, 255); */
+    background-color: hsl(235, 24%, 19%);
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    /* justify-content: center; */
+    /* align-items: center; */
+    height: 80px;
+    border-bottom: 1px solid hsl(237, 14%, 26%);
+    color: hsl(234, 39%, 85%);
+    font-size: 18px;
+    transition: all 0.25s ease;
+    display: flex;
+    cursor: pointer;
+    padding-right: 10px;
+  }
+  .left {
+    /* border:2px solid olive; */
+    display: flex;
+    flex-grow: 1;
+  }
+  
+  .right {
+    /* border:2px solid red; */
+    display: flex;
+    flex-grow: 1;
+    justify-content: flex-end;
+    align-items: center;
+    /* border: 1px solid green; */
+    opacity: 0;
+  }
+  .edit {
+    margin-right: 20px;
+  }
+  
+  .todo-item:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 0px 7px 0px hsl(235, 21%, 11%);
+    border-color: hsl(235, 24%, 19%);
+  }
+  
+  .todo-item:hover .right {
+    opacity: 1;
+    transition: ease-in-out 0.25s;
+  }
+  
+  .todo-text {
+    /* border:2px solid teal; */
+    display: flex;
+    align-items: center;
+    color: hsl(234, 39%, 85%);
+  
+    font-size: 18px;
+  }
+  
+  .todo-text.checked input {
+    border:2px solid yellow;
+    color: rgb(71, 80, 71);
+    text-decoration: line-through;
+  }
+  
+  .left input {
+    width: 100%;
+    padding: 20px 0px;
+    background-color: transparent;
+    border: none;
+    outline: none;
+    color: hsl(234, 39%, 85%);
+    font-size: 18px;
+  
+    height: 100%;
+  }
+  
+  .todo-items-wrapper {
+    margin-top: 30px;
+    background-color: hsl(235, 24%, 19%);
+    border-bottom: 6px;
+    overflow: hidden;
+    box-shadow: 0px 2px 30px 0px rgba(0, 0, 0, 0.4);
+  }
+  
+
+  /* end todo items result  */
+
+  
+  .todo-items-info {
+    height: 70px;
+    width: 100%;
+    color: hsl(233, 14%, 35%);
+    display: flex;
+    justify-content: space-between;
+    padding: 0 30px;
+    border-radius: 10%;
+    align-items: center;
+  }
+  
+  .item-statuses {
+    display: flex;
+    justify-content: center;
+  }
+  .item-statuses span {
+    padding: 0 5px;
+    cursor: pointer;
+  }
+  .item-statuses span:hover,
+  .item-statuses span.active,
+  .items-clear:hover {
+    color: hsl(220, 98%, 61%);
+  }
+  .items-clear {
+    cursor: pointer;
+    text-align: end;
+  }
+
+
+
+  /* notification design  */
+  .notification {
+    position: fixed;
+  
+    width: calc(3 * 400px / 4);
+    height: 70px;
+    
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    opacity: 0.7;
+  
+    border-radius: 9px;
+    background-color: rgb(246, 4, 4);
+    top: 10px;
+    right: calc(-3 * 400px / 4);
+    background-size: cover;
+    color: #000000;
+    box-shadow: 0 2px 7px 5px hsl(52, 68%, 45%);
+    font-weight: 500;
+    font-family: 'Roboto Mono', monospace;
+    transition: 300ms right ease-in-out;
+  }
+  
+  .notif-enter {
+    right: 10%;
+  }
+
+  .mark {
+    text-decoration: line-through;
+    /* color: rgb(73, 150, 104); */
+    color: rgb(209, 110, 92);
+  }
+  .sty{
+    text-align: center;
+    color:#09d3b1;
+    font-family:'Roboto Mono', monospace;
+    border-radius: 30%;
+    font-weight: 600; 
+    box-shadow: 5px 10px 300px 60px rgb(237, 15, 15,0.3);
+  }
